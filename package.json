@@ -1,0 +1,25 @@
+{
+  "name": "150514-Dev-Stack---Broccoli",
+  "version": "1.0.0",
+  "description": "Broccoli demo for Angie Party talk",
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angie-party/150514-Dev-Stack---Broccoli"
+  },
+  "dependencies": {
+    "broccoli": "^0.16.2"
+  },
+  "devDependencies": {
+    "broccoli-merge-trees": "^0.2.1",
+    "broccoli-static-compiler": "^0.2.1",
+    "broccoli-typescript": "^0.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devel": "broccoli serve",
+    "dist": "rm -r dist;broccoli build dist"
+  },
+  "author": "Mario Vejlupek <mario@vejlupek.cz>",
+  "license": "MIT"
+}
