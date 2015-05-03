@@ -7,12 +7,12 @@ function sayHello( age: number, name: string ) {
 
   if ( age > miniMe.age ) {
 
-    return 'Say Hello ' + name
+    return `Say Hello ${name}`
 
   }
 
-  return '*ehm*'
+  return `*ehm*`
 
 }
 
-alert( sayHello( 666, 'Who-Must-Not-Be-Named' ) )
+alert( sayHello( 666, `Who-Must-Not-Be-Named` ) )
