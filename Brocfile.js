@@ -7,4 +7,6 @@ app = new compileTypeScript( app );
 
 var staticFiles = 'static';
 
-module.exports = mergeTrees([ app, staticFiles ]);
+var jspmPackages = 'jspm_packages';
+
+module.exports = mergeTrees([ app, staticFiles, jspmPackages ]);

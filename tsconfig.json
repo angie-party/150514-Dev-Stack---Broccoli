@@ -2,15 +2,17 @@
     "version": "1.5.0-beta",
     "compileOnSave": false,
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs"
+        "target": "es6",
+        "module": "systemjs"
     },
     "filesGlob": [
         "./**/*.ts",
         "!./node_modules/**/*.ts"
     ],
     "files": [
-        "./app/index.ts"
+        "./app/index.ts",
+        "./typings/lodash/lodash.d.ts",
+        "./typings/tsd.d.ts"
     ],
     "formatCodeOptions": {
         "indentSize": 2,

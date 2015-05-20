@@ -1,3 +1,5 @@
+import lodash from 'lodash-node';
+
 class Person {
 
     fullname : string
@@ -37,16 +39,26 @@ document.forms[ `meetStranger` ].onsubmit = function( event ){
 
   event.preventDefault()
 
-  const strangerAge = ~~( document.getElementById( `strangerAge` ).value )
-  const strangerFullNameArray = document.getElementById( `strangerFullName` ).value.split( ` ` )
+  const strangerAgeValue = document.getElementById( `strangerAge` ).value
 
-  const strangerName = strangerFullNameArray[0]
-  const strangerSurname = strangerFullNameArray[1] || ``
+  if ( lodash.isEmpty( strangerAgeValue ) ) {
 
-  const stranger = new Person( strangerName, strangerSurname, strangerAge )
+    window.alert( `Enter age of the stranger` )
 
-  const response = me.meet( stranger )
+  } else {
 
-  window.alert( response )
+    const strangerAgeNumber = ~~( strangerAgeValue )
+    const strangerFullNameArray = document.getElementById( `strangerFullName` ).value.split( ` ` )
+
+    const strangerName = strangerFullNameArray[0]
+    const strangerSurname = strangerFullNameArray[1] || ``
+
+    const stranger = new Person( strangerName, strangerSurname, strangerAgeNumber )
+
+    const response = me.meet( stranger )
+
+    window.alert( response )
+
+  }
 
 }
