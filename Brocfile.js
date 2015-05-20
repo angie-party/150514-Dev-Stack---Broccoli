@@ -3,7 +3,7 @@ var mergeTrees = require( 'broccoli-merge-trees' );
 
 var app = 'app';
 
-app = compileTypeScript( app );
+app = new compileTypeScript( app );
 
 var staticFiles = 'static';
 

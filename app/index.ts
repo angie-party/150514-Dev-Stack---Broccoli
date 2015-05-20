@@ -1,18 +1,52 @@
+class Person {
 
-var miniMe = {
-  age: 0
+    fullname : string
+
+    constructor( public firstname: string, public lastname: string, public age: number ) {
+
+        this.fullname = `${firstname} ${lastname}`;
+
+    }
+
+    meet( stranger: Person ) {
+
+      // Compare age
+      if ( stranger.age === 666 ) {
+
+        // Return with greeting
+        return `Say Hello Who-Must-Not-Be-Named`
+
+      } else if ( stranger.age > this.age ) {
+
+        // Return with greeting
+        return `Say Hello ${stranger.fullname}`
+
+      }
+
+      // WAT???
+      return `*ehm*`
+
+    }
 }
 
-function sayHello( age: number, name: string ) {
 
-  if ( age > miniMe.age ) {
+const me = new Person( `Mario`, `Vejlupek`, 30 )
 
-    return `Say Hello ${name}`
 
-  }
+document.forms[ `meetStranger` ].onsubmit = function( event ){
 
-  return `*ehm*`
+  event.preventDefault()
+
+  const strangerAge = ~~( document.getElementById( `strangerAge` ).value )
+  const strangerFullNameArray = document.getElementById( `strangerFullName` ).value.split( ` ` )
+
+  const strangerName = strangerFullNameArray[0]
+  const strangerSurname = strangerFullNameArray[1] || ``
+
+  const stranger = new Person( strangerName, strangerSurname, strangerAge )
+
+  const response = me.meet( stranger )
+
+  window.alert( response )
 
 }
-
-alert( sayHello( 666, `Who-Must-Not-Be-Named` ) )
