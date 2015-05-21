@@ -31,4 +31,3 @@ tmp
 *.js
 !Brocfile.js
 typings
-jspm_packages
