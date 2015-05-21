@@ -1,6 +1,7 @@
 var CompileTypeScript = require( 'broccoli-tsc' )
 var MergeTrees = require( 'broccoli-merge-trees' )
-var Funnel = require( 'broccoli-funnel' );
+var Funnel = require( 'broccoli-funnel' )
+var CompileLess = require( 'broccoli-less-single' )
 
 var app = 'app'
 
@@ -13,4 +14,6 @@ var jspmPackages = new Funnel( 'jspm_packages', {
   destDir: 'jspm_packages'
 });
 
-module.exports = new MergeTrees([ app, staticFiles, jspmPackages ])
+var styles = new CompileLess( app, 'styles/app.less', 'assets/app.css' )
+
+module.exports = new MergeTrees([ app, staticFiles, jspmPackages, styles ])

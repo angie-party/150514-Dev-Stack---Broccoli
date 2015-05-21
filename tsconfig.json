@@ -14,5 +14,6 @@
         "tabSize": 2,
         "convertTabsToSpaces": true,
         "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true
-    }
+    },
+    "compileOnSave": false
 }
