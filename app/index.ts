@@ -35,11 +35,13 @@ class Person {
 const me = new Person( `Mario`, `Vejlupek`, 30 )
 
 
-document.forms[ `meetStranger` ].onsubmit = function( event ){
+document.forms[ `meetStranger` ].onsubmit = processEncounter
+
+function processEncounter( event ){
 
   event.preventDefault()
 
-  const strangerAgeValue = document.getElementById( `strangerAge` ).value
+  const strangerAgeValue = (<HTMLInputElement>document.getElementById( `strangerAge` )).value
 
   if ( lodash.isEmpty( strangerAgeValue ) ) {
 
@@ -48,7 +50,7 @@ document.forms[ `meetStranger` ].onsubmit = function( event ){
   } else {
 
     const strangerAgeNumber = ~~( strangerAgeValue )
-    const strangerFullNameArray = document.getElementById( `strangerFullName` ).value.split( ` ` )
+    const strangerFullNameArray = (<HTMLInputElement>document.getElementById( `strangerFullName` )).value.split( ` ` )
 
     const strangerName = strangerFullNameArray[0]
     const strangerSurname = strangerFullNameArray[1] || ``
