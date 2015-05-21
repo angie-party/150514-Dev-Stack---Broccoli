@@ -12,7 +12,6 @@
     "broccoli-cli": "^1.0.0",
     "broccoli-funnel": "^0.2.3",
     "broccoli-merge-trees": "^0.2.1",
-    "broccoli-static-compiler": "^0.2.1",
     "broccoli-tsc": "^0.2.0",
     "jspm": "git://github.com/jspm/jspm-cli"
   },

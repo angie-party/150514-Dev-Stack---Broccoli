@@ -1,6 +1,7 @@
 NODE_MODULES_BIN=node_modules/.bin
 
 start:
+	$(NODE_MODULES_BIN)/jspm install && \
 	$(NODE_MODULES_BIN)/broccoli serve
 
 test:

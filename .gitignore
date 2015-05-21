@@ -30,4 +30,5 @@ dist
 tmp
 *.js
 !Brocfile.js
+jspm_packages/*
 !jspm_packages/config.js
