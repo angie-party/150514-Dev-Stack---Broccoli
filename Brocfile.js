@@ -1,12 +1,16 @@
-var compileTypeScript = require( 'broccoli-tsc' );
-var mergeTrees = require( 'broccoli-merge-trees' );
+var CompileTypeScript = require( 'broccoli-tsc' )
+var MergeTrees = require( 'broccoli-merge-trees' )
+var Funnel = require( 'broccoli-funnel' );
 
-var app = 'app';
+var app = 'app'
 
-app = new compileTypeScript( app );
+app = new CompileTypeScript( app )
 
-var staticFiles = 'static';
+var staticFiles = 'static'
 
-var jspmPackages = 'jspm_packages';
+var jspmPackages = new Funnel( 'jspm_packages', {
+  srcDir: '/',
+  destDir: 'jspm_packages'
+});
 
-module.exports = mergeTrees([ app, staticFiles, jspmPackages ]);
+module.exports = new MergeTrees([ app, staticFiles, jspmPackages ])
