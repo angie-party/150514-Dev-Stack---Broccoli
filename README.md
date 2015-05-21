@@ -6,7 +6,7 @@ Broccoli demo for Angie Party talk
 ## Usage
 
 ```bash
-$ npm run dist
+$ make
 ```
 
 Go to http://localhost:4200
@@ -14,5 +14,5 @@ Go to http://localhost:4200
 ## Test
 
 ```bash
-$ npm test
+$ make test
 ```
