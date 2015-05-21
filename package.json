@@ -15,11 +15,9 @@
     "jspm": "git://github.com/jspm/jspm-cli"
   },
   "scripts": {
-    "devel": "broccoli serve",
-    "dist": "rimraf dist;broccoli build dist",
-    "pretest": "broccoli build tmp/test && tsc app/index.ts --out tmp/test/index-tsc.js",
-    "test": "diff tmp/test/index-tsc.js tmp/test/index.js && ls tmp/test/index.html",
-    "posttest": "rimraf tmp/test"
+    "start": "make",
+    "dist": "make dist",
+    "test": "make test"
   },
   "author": "Mario Vejlupek <mario@vejlupek.cz>",
   "license": "MIT",

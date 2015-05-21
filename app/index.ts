@@ -1,4 +1,4 @@
-import lodash from 'lodash-node';
+import lodash = require( 'lodash-node' )
 
 class Person {
 
@@ -6,7 +6,7 @@ class Person {
 
     constructor( public firstname: string, public lastname: string, public age: number ) {
 
-        this.fullname = `${firstname} ${lastname}`;
+        this.fullname = `${firstname} ${lastname}`
 
     }
 

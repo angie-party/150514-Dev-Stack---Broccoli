@@ -30,4 +30,3 @@ dist
 tmp
 *.js
 !Brocfile.js
-typings
