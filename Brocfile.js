@@ -5,15 +5,14 @@ var CompileLess = require( 'broccoli-less-single' )
 
 var app = 'app'
 
-app = new CompileTypeScript( app )
+var appCompiled = new CompileTypeScript( app )
 
-var staticFiles = 'static'
+var staticFiles = 'app/static'
 
 var jspmPackages = new Funnel( 'jspm_packages', {
-  srcDir: '/',
   destDir: 'jspm_packages'
 });
 
 var styles = new CompileLess( app, 'styles/app.less', 'assets/app.css' )
 
-module.exports = new MergeTrees([ app, staticFiles, jspmPackages, styles ])
+module.exports = new MergeTrees([ appCompiled, staticFiles, jspmPackages, styles ])
